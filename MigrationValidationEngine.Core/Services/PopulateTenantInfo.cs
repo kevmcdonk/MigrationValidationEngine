@@ -1,4 +1,4 @@
-usdotneting System;
+using System;
 using Mcd79.MigrationValidationEngine.Core.Model;
 
 namespace Mcd79.MigrationValidationEngine.Core.Services
@@ -7,7 +7,7 @@ namespace Mcd79.MigrationValidationEngine.Core.Services
     public class PopulateTenantInfo
     {
         public static MVETenant Retrieve (string TenantUrl) {
-
+            throw new NotImplementedException();
         }
     }
 }

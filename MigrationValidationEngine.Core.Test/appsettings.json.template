@@ -1,0 +1,44 @@
+{
+    "PnPCore": {
+      "DisableTelemetry": "false",
+      "HttpRequests": {
+        "UserAgent": "ISV|Contoso|ProductX",
+        "Timeout": "100",
+        "SharePointRest": {
+          "UseRetryAfterHeader": "false",
+          "MaxRetries": "10",
+          "DelayInSeconds": "3",
+          "UseIncrementalDelay": "true"
+        },
+        "MicrosoftGraph": {
+          "UseRetryAfterHeader": "true",
+          "MaxRetries": "10",
+          "DelayInSeconds": "3",
+          "UseIncrementalDelay": "true"
+        }
+      },
+      "PnPContext": {
+        "GraphFirst": "true",
+        "GraphCanUseBeta": "true",
+        "GraphAlwaysUseBeta": "false"
+      },
+      "Credentials": {
+        "DefaultConfiguration": "interactive",
+        "Configurations": {
+          "interactive": {
+            "ClientId": "{ClientID}",
+            "TenantId": "{TenantID}",
+            "Interactive": {
+              "RedirectUri": "http://localhost"
+            }
+          }
+        }
+      },
+      "Sites": {
+        "SiteToWorkWith": {
+          "SiteUrl": "https://{Tenant}.sharepoint.com/sites/{SiteAlias}",
+          "AuthenticationProviderName": "interactive"
+        }
+      }
+    }
+  }
