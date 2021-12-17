@@ -2,10 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to .NET Functions",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:azureFunctions.pickProcess}"
+            "name": "core tests",
+            "label": "password tests",
+            "type": "clr", 
+            "isBackground": true, 
+            "command": "dotnet",
+            "request":"launch",
+            "console": "integratedTerminal",
+            "args": [
+                "test",
+                "${workspaceFolder}/MigrationValidationEngine.Core.Tests/MigrationValidationEngine.Core.Test.csproj"
+            ]
         }
     ]
 }

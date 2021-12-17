@@ -1,6 +1,8 @@
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PnP.Core.Auth;
@@ -13,9 +15,16 @@ namespace Mcd79.MigrationValidationEngine.Core.Test.Services
 {
     public class PopulateTenantInfoTests
     {
-        IHost _host; 
+        IHost _host;
+        private readonly IConfiguration _config;
 
         public PopulateTenantInfoTests() {
+            _config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile(@"appsettings.json",false,false)
+                .AddEnvironmentVariables()
+                .Build();
+
             _host = Host.CreateDefaultBuilder()
             // Configure logging
             .ConfigureServices((hostingContext, services) =>
@@ -34,6 +43,7 @@ namespace Mcd79.MigrationValidationEngine.Core.Test.Services
             // Add services to the container
             .Build();
 
+            Console.WriteLine(_host);
         }
         
         public Task InitializeAsync() => _host.StartAsync();
