@@ -263,3 +263,4 @@ paket-files/
 __pycache__/
 *.pyc
 MigrationValidationEngine.Core.Test/appsettings.json
+MigrationValidationEngine.Core/appsettings.json

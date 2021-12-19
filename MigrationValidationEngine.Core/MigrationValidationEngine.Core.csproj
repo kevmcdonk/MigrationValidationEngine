@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.23.0" />
     <PackageReference Include="pnp.core" Version="1.4.0" />
     <PackageReference Include="pnp.core.auth" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    <None Update="appsettings.json" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
 </Project>

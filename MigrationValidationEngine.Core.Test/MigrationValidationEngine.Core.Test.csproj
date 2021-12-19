@@ -21,6 +21,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <None Update="appsettings.json" CopyToOutputDirectory="Always" />
+    <ProjectReference Include="..\MigrationValidationEngine.Core\MigrationValidationEngine.Core.csproj"/>
   </ItemGroup>
   
 </Project>
